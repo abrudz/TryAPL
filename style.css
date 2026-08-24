@@ -637,6 +637,43 @@ button.wsName:hover {
   text-transform: capitalize;
 }
 
+/* APLcart search (Links tab) */
+#aplcartResults {
+  margin-top: 0.4em;
+}
+.aplcart-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6em;
+  padding: 0.25em 0;
+  border-bottom: 1px solid rgba(var(--main-col), 0.15);
+}
+button.aplcart-syntax {
+  font-family: APL, monospace;
+  flex: none;
+  min-width: 6em;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  color: rgb(var(--main-dark));
+  cursor: pointer;
+  padding: 0;
+}
+.b button.aplcart-syntax {
+  color: rgb(var(--mid));
+}
+button.aplcart-syntax:hover {
+  text-decoration: underline;
+}
+.aplcart-desc {
+  flex: 1;
+}
+.aplcart-docs {
+  flex: none;
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
 .ngn_x {
   margin-top: -3px;
 }

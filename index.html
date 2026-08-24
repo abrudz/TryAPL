@@ -326,6 +326,10 @@ session.value=session.value.slice(0,session.selectionStart)
 		<br/></div>
 		<div class="content" id="links">
 			<h1>Useful links</h1>
+			<h2 id="aplcartsearch">Search APLcart</h2>
+			<p>Find an APL idiom by description. Results come from <a target="_blank" href="https://aplcart.info/">APLcart</a>; click one to insert it into the session.</p>
+			<p class="urlInputGroup"><input type="search" id="aplcartInput" class="inURL" placeholder="e.g. sort, unique, split on spaces" spellcheck="false" autocomplete="off"></p>
+			<div id="aplcartResults"></div>
 			<h2 id="wiki">APL Wiki</h2>
 			Most information is available on the <a target="_blank" href="https://aplwiki.com">APL Wiki</a>, for example:
 			<ul>
@@ -504,5 +508,6 @@ session.value=session.value.slice(0,session.selectionStart)
 	<script src="lib/quadbar.js"></script>
 	<script src="lib/explorer.js"></script>
 	<script src="lib/palette.js"></script>
+	<script src="lib/aplcart.js"></script>
 	</body>
 </html>
