@@ -783,6 +783,58 @@ body.embed #rightPane {
   float: none !important;
 }
 
+/* on-screen keyboard */
+.oskb-toggle {
+  float: right;
+  cursor: pointer;
+  padding: 0 4px;
+  user-select: none;
+}
+.oskb-toggle:hover { background: rgb(var(--main-dark)); }
+.oskb[hidden] { display: none; }
+.oskb {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 4px;
+  background: rgb(var(--main-col));
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.35);
+  user-select: none;
+  touch-action: manipulation;
+}
+.oskb-row {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+.oskb-key {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 3em;
+  height: 2.4em;
+  border: 0;
+  border-radius: 4px;
+  background: #fff;
+  color: #000;
+  font-family: APL, monospace;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+.oskb-key:active { background: rgb(var(--main-light)); color: #fff; }
+.oskb-fn {
+  background: rgb(var(--main-dark));
+  color: #fff;
+  font-family: sans, sans-serif;
+  max-width: 4em;
+}
+.oskb-fn.on { background: rgb(var(--sec-light)); }
+.oskb-space { flex: 6 1 auto; max-width: none; }
+
 /* interactive help panel */
 .helpview[hidden] { display: none; }
 .helpview {

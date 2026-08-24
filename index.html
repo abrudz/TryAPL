@@ -477,6 +477,9 @@ session.value=session.value.slice(0,session.selectionStart)
 		</p>
 				<input type="file" id="upload" accept=".tryapl" onchange="uploadWS()" style="display:none;" accesskey="u">
 				<br><br>
+				<h1>Input Settings</h1>
+				<p>Keys that begin <a href="#" onclick="helpTab.click();return false;">prefix</a> glyph input (default is the backtick <kbd>`</kbd> and a few alternates). Edit to use your own, e.g. add a key you find handy.</p>
+				<p class="urlInputGroup"><label for="prefixKeysInput">Prefix key(s):&nbsp;</label><input type="text" id="prefixKeysInput" class="inURL" spellcheck="false" autocomplete="off"> <button id="prefixKeysReset" type="button">Reset</button></p>
 				<h1>Workspace Contents</h1>
 				<p>A live view of the names currently in your workspace. Click a name to inspect its value or definition. <button id="wsExploreRefresh" type="button">Refresh</button></p>
 				<div id="wsExplorer">
@@ -514,5 +517,6 @@ session.value=session.value.slice(0,session.selectionStart)
 	<script src="lib/embed.js"></script>
 	<script src="lib/carousel.js"></script>
 	<script src="lib/help.js"></script>
+	<script src="lib/oskb.js"></script>
 	</body>
 </html>
