@@ -574,6 +574,69 @@ button.wsName:hover {
   border-radius: 3px;
 }
 
+/* Ctrl+Space search palette */
+.palette {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: rgba(0, 0, 0, 0.35);
+}
+.palette-box {
+  margin-top: 12vh;
+  width: min(520px, 92vw);
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #000;
+  border-radius: 6px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+.b .palette-box {
+  background: #222;
+  color: #eee;
+}
+.palette-input {
+  border: 0;
+  border-bottom: 1px solid rgb(var(--main-col));
+  padding: 0.6em 0.8em;
+  font-size: 1.1em;
+  background: inherit;
+  color: inherit;
+  outline: none;
+}
+.palette-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+}
+.palette-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6em;
+  padding: 0.35em 0.8em;
+  cursor: pointer;
+}
+.palette-row.sel,
+.palette-row:hover {
+  background: rgb(var(--main-col));
+  color: #fff;
+}
+.palette-glyph {
+  font-size: 1.3em;
+  width: 1.4em;
+  text-align: center;
+  flex: none;
+}
+.palette-name {
+  text-transform: capitalize;
+}
+
 .ngn_x {
   margin-top: -3px;
 }
