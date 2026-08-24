@@ -27,11 +27,11 @@ with caching disabled (so edits show on reload) and proxies the `/Exec` backend
 call to a running TryAPL server. Configure it with environment variables:
 
 - `PORT` &mdash; port to serve on (default `8004`)
-- `BACKEND` &mdash; base URL of the backend to proxy `/Exec` to (default `http://localhost:8080`)
+- `BACKEND` &mdash; base URL of the backend to proxy `/Exec` to (default `https://staging.tryapl.org`)
 
 ```
-# use the live backend instead of a local one
-BACKEND=https://tryapl.org node dev-server.js
+# use a local backend instead of staging
+BACKEND=http://localhost:8080 node dev-server.js
 ```
 
 ### Staged Continuous Integration

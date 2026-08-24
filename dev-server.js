@@ -10,8 +10,9 @@
 //   Usage:  node dev-server.js
 //   Config (env vars):
 //     PORT      port to serve the front end on          (default 8004)
-//     BACKEND   base URL of the existing TryAPL backend (default http://localhost:8080)
-//               e.g. BACKEND=https://tryapl.org node dev-server.js
+//     BACKEND   base URL of the existing TryAPL backend (default
+//               https://staging.tryapl.org) — e.g. to use a local backend:
+//               BACKEND=http://localhost:8080 node dev-server.js
 //
 // No dependencies — Node's built-ins only.
 
@@ -23,7 +24,7 @@ const { URL } = require('url');
 
 const PORT    = process.env.PORT    || 8004;
 const HOST    = process.env.HOST    || '0.0.0.0'; // bind all IPv4 ifaces (reachable from WSL2 host)
-const BACKEND = process.env.BACKEND || 'http://localhost:8080';
+const BACKEND = process.env.BACKEND || 'https://staging.tryapl.org';
 const ROOT    = __dirname; // repo root (this file lives at the top level)
 
 const MIME = {
@@ -87,7 +88,7 @@ function proxy(req, res) {
       `Dev-server proxy could not reach the backend at ${BACKEND}\n` +
       `(${e.code || e.message}).\n\n` +
       `Start the TryAPL backend, or point this server at another one:\n` +
-      `  BACKEND=https://tryapl.org node dev-server.js\n`
+      `  BACKEND=http://localhost:8080 node dev-server.js\n`
     );
   });
   req.pipe(preq);
