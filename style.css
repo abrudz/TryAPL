@@ -547,6 +547,33 @@ td{
   color: rgb(var(--main-col));
 }
 
+/* workspace explorer (File tab) */
+#wsExplorerTree h4 {
+  margin: 0.6em 0 0.2em;
+}
+button.wsName {
+  font-family: APL, monospace;
+  margin: 1px;
+  padding: 1px 6px;
+  border: 1px solid rgb(var(--main-col));
+  border-radius: 3px;
+  background: transparent;
+  color: inherit;
+}
+button.wsName:hover {
+  background: rgb(var(--main-col));
+  color: #fff;
+}
+#wsExplorerDetail {
+  white-space: pre;
+  overflow-x: auto;
+  min-height: 1.2em;
+  margin-top: 0.5em;
+  padding: 0.4em;
+  background: rgba(var(--main-col), 0.06);
+  border-radius: 3px;
+}
+
 .ngn_x {
   margin-top: -3px;
 }

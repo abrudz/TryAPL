@@ -472,6 +472,13 @@ session.value=session.value.slice(0,session.selectionStart)
 		</p>
 				<input type="file" id="upload" accept=".tryapl" onchange="uploadWS()" style="display:none;" accesskey="u">
 				<br><br>
+				<h1>Workspace Contents</h1>
+				<p>A live view of the names currently in your workspace. Click a name to inspect its value or definition. <button id="wsExploreRefresh" type="button">Refresh</button></p>
+				<div id="wsExplorer">
+					<div id="wsExplorerTree"></div>
+					<pre id="wsExplorerDetail" class="apl"></pre>
+				</div>
+				<br>
 		</div>
 	</div>
 	<div id="rightPane" class="split">
@@ -495,5 +502,6 @@ session.value=session.value.slice(0,session.selectionStart)
 	</div>
 	<script src="lib/tiolb.js"></script>
 	<script src="lib/quadbar.js"></script>
+	<script src="lib/explorer.js"></script>
 	</body>
 </html>
