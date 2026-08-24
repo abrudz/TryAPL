@@ -429,6 +429,10 @@ session.value=session.value.slice(0,session.selectionStart)
 				<p>To protect the server, expressions are checked against a whitelist while <code>⍎</code>, <code>⍕</code>, <code>⍣</code>, <code>⌶</code>, and <code>⎕FX</code> have limited functionality. All supported quad-names, system and user commands are listed on the <a href="#" onclick="primerTab.click()"><b>Primer</b></a> tab.</p>
 				<p><b>Space and time limits</b> can be queried with <code class="apl">]State</code>. Exceeding the maximum time for execution of an expression causes the execution to be cancelled and the workspace will remain as it was before the expression was entered.</p>
 			<p>When using TryAPL, your workspace is automatically saved to local storage in your web browser. <strong>No data is stored on our servers</strong>; it is only sent across the network when you execute code. Manage your data from the <a href="#" onclick="fileTab.click()">File</a> tab.</p>
+			<h2 id="richoutput">Rich output</h2>
+				<p>An expression whose result is a character vector of the form <code>∆RICH∆<i>type</i>∆<i>payload</i></code> is rendered below the session instead of being printed. Supported <i>type</i>s: <code>svg</code>, <code>html</code>, <code>png</code>, <code>jpeg</code>, <code>gif</code>, <code>wav</code>/<code>audio</code>, <code>video</code>, <code>md</code>, and <code>latex</code> (binary payloads are base64). For example, click to draw a circle:</p>
+				<p><code class="apl">'∆RICH∆svg∆&lt;svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"&gt;&lt;circle cx="60" cy="60" r="55" fill="rebeccapurple"/&gt;&lt;/svg&gt;'</code></p>
+				<p>Payload size is bounded by the server's output limits, so this suits small diagrams and plots rather than large images.</p>
 			<h2 id="credits">Credits</h2>
 			<table class="creditsTable">
 				<tr><td>Implementation</td><td>Brian Becker</td></tr>
@@ -492,6 +496,10 @@ session.value=session.value.slice(0,session.selectionStart)
 	<div id="rightPane" class="split">
 		<textarea spellcheck="false" id="session" autofocus wrap="off"></textarea>
 		<i id="linkIcon" class="fa fa-link" onclick="permaLink();" title="Link to expression in URL bar"></i>
+		<div id="richDock" hidden>
+			<div id="richDockHead"><span>Rich output</span><span id="richDockClear" title="Clear rich output">clear &times;</span></div>
+			<div id="richDockBody"></div>
+		</div>
 		<div id="replBar">
 			<p class="urlInputGroup" id="aplInputGroup">
 			<input spellcheck="false" id="oneLineInput" class="inURL" type=text width="100%" autocomplete="off"><button class="run" id="oneLineSubmit" onclick="submitOneLine()"><svg xmlns="https://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"></path><path d="M10 8.64L15.27 12 10 15.36V8.64M8 5v14l11-7L8 5z"></path></svg></button>
@@ -518,5 +526,6 @@ session.value=session.value.slice(0,session.selectionStart)
 	<script src="lib/carousel.js"></script>
 	<script src="lib/help.js"></script>
 	<script src="lib/oskb.js"></script>
+	<script src="lib/richout.js"></script>
 	</body>
 </html>
