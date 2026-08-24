@@ -519,6 +519,7 @@ td{
 .quadbar-toggle:hover {
   background: rgb(var(--main-dark));
 }
+.quadbar-panel[hidden] { display: none; } /* beat the .quadbar-panel display:flex below */
 .quadbar-panel {
   position: fixed;
   right: 2px;
@@ -575,6 +576,7 @@ button.wsName:hover {
 }
 
 /* Ctrl+Space search palette */
+.palette[hidden] { display: none; } /* beat the .palette display:flex below */
 .palette {
   position: fixed;
   inset: 0;
@@ -600,14 +602,31 @@ button.wsName:hover {
   background: #222;
   color: #eee;
 }
-.palette-input {
-  border: 0;
+.palette-head {
+  display: flex;
+  align-items: stretch;
   border-bottom: 1px solid rgb(var(--main-col));
+}
+.palette-input {
+  flex: 1;
+  border: 0;
   padding: 0.6em 0.8em;
   font-size: 1.1em;
   background: inherit;
   color: inherit;
   outline: none;
+}
+.palette-close {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.4em;
+  line-height: 1;
+  padding: 0 0.6em;
+}
+.palette-close:hover {
+  color: rgb(var(--main-col));
 }
 .palette-list {
   list-style: none;
