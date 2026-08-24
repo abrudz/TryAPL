@@ -508,6 +508,45 @@ td{
   cursor: pointer;
 }
 
+/* system-function (quad-name) palette */
+.quadbar-toggle {
+  float: right;
+  cursor: pointer;
+  padding: 0 4px;
+  font-family: APL, monospace;
+  user-select: none;
+}
+.quadbar-toggle:hover {
+  background: rgb(var(--main-dark));
+}
+.quadbar-panel {
+  position: fixed;
+  right: 2px;
+  z-index: 1000;
+  max-width: 90vw;
+  max-height: 60vh;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 4px;
+  background: rgb(var(--main-col));
+  border: 1px solid rgb(var(--main-dark));
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.quadbar-item {
+  font-family: APL, monospace;
+  border: 0;
+  border-radius: 3px;
+  padding: 2px 6px;
+  color: #fff;
+  background: rgb(var(--main-dark));
+}
+.quadbar-item:hover {
+  background: #fff;
+  color: rgb(var(--main-col));
+}
+
 .ngn_x {
   margin-top: -3px;
 }
