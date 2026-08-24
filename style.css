@@ -733,6 +733,17 @@ button.aplcart-syntax:hover {
 .kb-ins { cursor: pointer; }
 .kb-ins:hover { color: rgb(var(--main-dark)); font-weight: bold; }
 
+/* embeddable widget mode (?embed) */
+body.embed #leftPane,
+body.embed #linkIcon,
+body.embed .gutter {
+  display: none !important;
+}
+body.embed #rightPane {
+  width: 100% !important;
+  float: none !important;
+}
+
 .ngn_x {
   margin-top: -3px;
 }
