@@ -674,6 +674,65 @@ button.aplcart-syntax:hover {
   white-space: nowrap;
 }
 
+/* keyboard-map overlay */
+.kbmap-toggle {
+  float: right;
+  cursor: pointer;
+  padding: 0 4px;
+  user-select: none;
+}
+.kbmap-toggle:hover {
+  background: rgb(var(--main-dark));
+}
+.kbmap {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+}
+.kbmap-board {
+  background: #fff;
+  color: #000;
+  padding: 10px;
+  border-radius: 6px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  max-width: 96vw;
+  overflow: auto;
+}
+.b .kbmap-board {
+  background: #222;
+  color: #eee;
+}
+.kbmap-row {
+  display: flex;
+  justify-content: center;
+}
+.kbmap-key {
+  position: relative;
+  width: 3em;
+  height: 3em;
+  margin: 2px;
+  border: 1px solid rgb(var(--main-col));
+  border-radius: 4px;
+  flex: none;
+}
+.kbmap-key span {
+  position: absolute;
+  font-size: 0.8em;
+  line-height: 1;
+}
+.kb-tl { top: 3px; left: 4px; }
+.kb-tr { top: 3px; right: 4px; }
+.kb-bl { bottom: 3px; left: 4px; }
+.kb-br { bottom: 3px; right: 4px; }
+.kb-tl, .kb-bl { color: rgb(var(--g8)); }
+.kb-tr, .kb-br { font-size: 1em; }
+.kb-ins { cursor: pointer; }
+.kb-ins:hover { color: rgb(var(--main-dark)); font-weight: bold; }
+
 .ngn_x {
   margin-top: -3px;
 }
