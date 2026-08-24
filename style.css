@@ -744,6 +744,59 @@ body.embed #rightPane {
   float: none !important;
 }
 
+/* examples carousel (Intro tab) */
+#exampleCarousel {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  margin: 0.6em 0 1em;
+  padding: 0.5em;
+  border: 1px solid rgba(var(--main-col), 0.3);
+  border-radius: 6px;
+  background: rgba(var(--main-col), 0.05);
+}
+#exampleCarousel:empty {
+  display: none;
+}
+.carousel-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  min-width: 0;
+}
+.carousel-expr {
+  font-family: APL, monospace;
+  font-size: 1.1em;
+  cursor: pointer;
+  color: rgb(var(--main-dark));
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.b .carousel-expr {
+  color: rgb(var(--mid));
+}
+.carousel-expr:hover {
+  text-decoration: underline;
+}
+.carousel-note {
+  font-size: 0.9em;
+  color: rgb(var(--g8));
+}
+button.carousel-nav {
+  flex: none;
+  border: 0;
+  background: transparent;
+  font-size: 1.4em;
+  line-height: 1;
+  cursor: pointer;
+  color: rgb(var(--main-col));
+  padding: 0 0.2em;
+}
+button.carousel-nav:hover {
+  color: rgb(var(--main-dark));
+}
+
 .ngn_x {
   margin-top: -3px;
 }
