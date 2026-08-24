@@ -168,6 +168,7 @@ td{
   cursor: ew-resize;
   background: rgb(var(--main-col));
   height: 100vh;
+  height: 100dvh;
   color: #fff;
 }
 
@@ -176,6 +177,7 @@ td{
   overflow: hidden auto;
   display: none;
   height: calc(100vh - 3em);
+  height: calc(100dvh - 3em); /* avoid mobile browser-chrome resize jumps */
 }
 
 .content.active {
@@ -219,7 +221,17 @@ td{
 
 #leftPane {
   overflow-y: auto;
-  z-index: -2;  
+  z-index: -2;
+  container-type: inline-size; /* let #tabs switch icon/text by pane width in CSS */
+}
+
+/* Tab labels vs icons — driven by the left pane's width (replaces the old
+   checkPaneWidth JS hack). Text by default; icons when the pane is narrow. */
+#tabs svg { display: none; }
+#tabs span { display: inline; }
+@container (max-width: 395px) {
+  #tabs span { display: none; }
+  #tabs svg { display: inline; }
 }
 
 #tabs {
@@ -913,6 +925,7 @@ button.lesson-done {
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.35);
   user-select: none;
   touch-action: manipulation;
+  padding-bottom: calc(4px + env(safe-area-inset-bottom)); /* clear the home indicator */
 }
 .oskb-row {
   display: flex;
@@ -1135,3 +1148,32 @@ button.carousel-nav:hover {
   text-decoration: none;
   cursor: pointer;
 } 
+
+/* ============================================================
+   Mobile-first responsive layout (narrow screens / touch)
+   ============================================================ */
+
+/* Never let the page scroll sideways; wide content scrolls in its own box. */
+html, body { max-width: 100%; }
+
+@media (max-width: 640px) {
+  /* Stack the two panes vertically. Split.js sets inline width/float on
+     .split; override it here (and restore automatically above 640px). The
+     gutter is not useful when stacked. */
+  #leftPane, #rightPane {
+    width: 100% !important;
+    float: none !important;
+  }
+  .gutter.gutter-horizontal { display: none !important; }
+  #leftPane { height: 42dvh; }
+  #rightPane { height: 58dvh; }
+
+  /* Keep the (wrapping) language bar from eating the screen. */
+  .ngn_lb { max-height: 30dvh; overflow-y: auto; }
+
+  /* Bottom controls clear the home indicator. */
+  #replBar { padding-bottom: env(safe-area-inset-bottom); }
+
+  /* Roomier touch targets in the language bar. */
+  .ngn_lb b { padding: 2px 5px; }
+}
