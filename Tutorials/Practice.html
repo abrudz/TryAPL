@@ -1,0 +1,17 @@
+<meta data-name="Practice: Arithmetic" data-category="Practice" data-description="Practice APL arithmetic with checked exercises"/>
+
+<div class="lessonstep"><div>APL evaluates right-to-left, and there is no precedence between functions. So <code class="APL">2×3+4</code> is <code class="APL">2×(3+4)</code>, not <code class="APL">(2×3)+4</code>. Try it:</div></div>
+
+<div class="lessonexec">2×3+4</div>
+
+<div class="lessonstep"><div>Now it is your turn. Type an expression in the box and press <strong>Check</strong>.</div></div>
+
+<div class="lessontask" data-prompt="Write an expression that sums the integers from 1 to 10 (expected result: 55)." data-check="55"></div>
+
+<div class="lessonhint" data-trigger="\+/[^⍳]*10(\s|$)">Remember that <code class="APL">⍳10</code> gives the first ten integers; you want <code class="APL">+/⍳10</code>, not <code class="APL">+/10</code>.</div>
+
+<div class="lessonstep"><div>One more: reshape is <code class="APL">⍴</code> used dyadically.</div></div>
+
+<div class="lessontask" data-prompt="Make a 2-by-3 matrix containing the numbers 1 to 6 (expected result is three columns and two rows)." data-check="1 2 3&#10;4 5 6"></div>
+
+<div class="lessonhint" data-trigger="^[^⍴]*$">This task needs reshape <code class="APL">⍴</code>: try <code class="APL">2 3⍴⍳6</code>.</div>

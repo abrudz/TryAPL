@@ -1,0 +1,6 @@
+{
+  "lessons": [
+    { "file": "Functions.html", "title": "Functions", "category": "APL Basics" },
+    { "file": "Practice.html", "title": "Practice: Arithmetic", "category": "Practice" }
+  ]
+}

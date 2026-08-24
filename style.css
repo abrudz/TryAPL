@@ -783,6 +783,72 @@ body.embed #rightPane {
   float: none !important;
 }
 
+/* guided HTML tutorials */
+#guidedList { margin-top: 1em; }
+a.guided-link {
+  display: block;
+  margin-bottom: 0.4ex;
+  color: unset;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.b a.guided-link { text-decoration-color: #77f; }
+#lessonView[hidden] { display: none; }
+#lessonView {
+  overflow: auto;
+  padding: 0 0.5em 3ex;
+}
+.lesson-head {
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 4px 0;
+  background: inherit;
+  font-weight: bold;
+}
+button.lesson-close {
+  border: 1px solid rgb(var(--main-col));
+  background: transparent;
+  color: inherit;
+  border-radius: 4px;
+  padding: 1px 8px;
+  cursor: pointer;
+}
+.lesson-prose { margin: 0.6em 0; }
+.lesson-exec { margin: 0.3em 0; }
+code.lesson-run {
+  cursor: pointer;
+  color: rgb(var(--sec-dark));
+}
+.b code.lesson-run { color: rgb(var(--sec-light)); }
+code.lesson-run:hover { text-decoration: underline; }
+.lesson-task {
+  margin: 0.8em 0;
+  padding: 0.6em;
+  border-left: 3px solid rgb(var(--main-col));
+  background: rgba(var(--main-col), 0.06);
+}
+.lesson-task-prompt { margin-bottom: 0.4em; }
+.lesson-task-fb.ok { color: #1a7f1a; font-weight: bold; }
+.lesson-task-fb.no { color: #b00; }
+.lesson-hint {
+  margin: 0.6em 0;
+  padding: 0.5em;
+  border-radius: 4px;
+  background: rgba(var(--mid), 0.18);
+}
+button.lesson-done {
+  margin-top: 1em;
+  border: 0;
+  border-radius: 4px;
+  padding: 4px 10px;
+  background: rgb(var(--main-col));
+  color: #fff;
+  cursor: pointer;
+}
+
 /* rich output dock */
 #richDock[hidden] { display: none; }
 #richDock {
