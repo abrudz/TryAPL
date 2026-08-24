@@ -783,6 +783,72 @@ body.embed #rightPane {
   float: none !important;
 }
 
+/* interactive help panel */
+.helpview[hidden] { display: none; }
+.helpview {
+  position: fixed;
+  right: 12px;
+  top: 56px;
+  z-index: 600;
+  width: min(460px, 92vw);
+  max-height: 72vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #000;
+  border: 1px solid rgb(var(--main-col));
+  border-radius: 6px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+.b .helpview {
+  background: #222;
+  color: #eee;
+}
+.helpview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  cursor: move;
+  padding: 3px 10px;
+  background: rgb(var(--main-col));
+  color: #fff;
+  border-radius: 5px 5px 0 0;
+  user-select: none;
+}
+.helpview-title { font-size: 1.1em; }
+.helpview-close {
+  cursor: pointer;
+  padding: 0 4px;
+  font-size: 1.2em;
+  line-height: 1;
+}
+.helpview-close:hover { color: rgb(var(--sec-light)); }
+.helpview-body {
+  padding: 8px 10px;
+  overflow: auto;
+}
+.helpview-type {
+  color: rgb(var(--g8));
+  margin-bottom: 4px;
+}
+.helpview-docs {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 0.9em;
+}
+.helpview-pre {
+  white-space: pre;
+  overflow-x: auto;
+  margin: 0;
+}
+.helpview-ex {
+  cursor: pointer;
+  color: rgb(var(--sec-dark));
+}
+.b .helpview-ex { color: rgb(var(--sec-light)); }
+.helpview-ex:hover { text-decoration: underline; }
+
 /* examples carousel (Intro tab) */
 #exampleCarousel {
   display: flex;

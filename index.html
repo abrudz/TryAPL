@@ -157,7 +157,7 @@
 			<h1>Cheat Sheet</h1>
 			<h2 id="primitives">Primitives</h2>
 			Use the language bar above to insert glyphs. Click on a glyph below to print basic usage and how to type it. Enter <code class="apl">]help </code> followed by a symbol for details; for example <code class="apl">]help +</code>.
-			<div id="primerGlyphs" onclick="glyphHelp(event.target.value)">
+			<div id="primerGlyphs" onclick="openHelp(event.target.value)">
 				<h4>Mathematics</h4>
 				<input type="button" value="+">
 				<input type="button" value="-">
@@ -206,7 +206,7 @@
 				<input type="button" value="⊃">
 				<input type="button" value="/">
 				<input type="button" value="⌿">
-				<input onclick="glyphHelp('\\');" type="button" value="\">
+				<input onclick="openHelp('\\');" type="button" value="\">
 				<input type="button" value="⍀">
 				<input type="button" value="~">
 				<input type="button" value="≠">
@@ -513,5 +513,6 @@ session.value=session.value.slice(0,session.selectionStart)
 	<script src="lib/kbmap.js"></script>
 	<script src="lib/embed.js"></script>
 	<script src="lib/carousel.js"></script>
+	<script src="lib/help.js"></script>
 	</body>
 </html>
