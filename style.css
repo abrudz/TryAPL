@@ -686,25 +686,45 @@ button.aplcart-syntax:hover {
 }
 .kbmap {
   position: fixed;
-  inset: 0;
-  z-index: 2000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.4);
-}
-.kbmap-board {
+  right: 12px;
+  bottom: 12px;
+  z-index: 500; /* above content, but NOT a modal — the session stays usable */
   background: #fff;
   color: #000;
-  padding: 10px;
+  border: 1px solid rgb(var(--main-col));
   border-radius: 6px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
   max-width: 96vw;
-  overflow: auto;
 }
-.b .kbmap-board {
+.b .kbmap {
   background: #222;
   color: #eee;
+}
+.kbmap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  cursor: move;
+  padding: 3px 8px;
+  background: rgb(var(--main-col));
+  color: #fff;
+  border-radius: 5px 5px 0 0;
+  user-select: none;
+}
+.kbmap-close {
+  cursor: pointer;
+  padding: 0 4px;
+  font-size: 1.2em;
+  line-height: 1;
+}
+.kbmap-close:hover {
+  color: rgb(var(--sec-light));
+}
+.kbmap-board {
+  padding: 10px;
+  max-width: 96vw;
+  overflow: auto;
 }
 .kbmap-row {
   display: flex;
